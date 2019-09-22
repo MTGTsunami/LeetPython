@@ -37,7 +37,6 @@ class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
 
         def findMin(root):  # The minimum value of a tree without the node's value
-            minval = 0
             if root.left is not None and root.right is not None:
                 minleft = findMin(root.left)
                 minright = findMin(root.right)
@@ -51,7 +50,6 @@ class Solution:
             return minval
 
         def findMax(root):  # The maximum value of a tree without the node's value
-            maxval = 0
             if root.left is not None and root.right is not None:
                 maxleft = findMax(root.left)
                 maxright = findMax(root.right)
