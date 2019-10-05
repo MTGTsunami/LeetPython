@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0da84f33-15cd-444b-b681-6874e32440bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/leetcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0da84f33-15cd-444b-b681-6874e32440bc" name="Default Changelist" comment="10/04/2019">
+      <change beforePath="$PROJECT_DIR$/#Test_Basic/hongkong OA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#Test_Basic/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/#Test_Basic/test3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,15 +31,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\graduate OSU\graduate study\leetcode\#Test_Basic" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/OAs/GoldmanSachs" />
       <recent name="$PROJECT_DIR$/Array" />
       <recent name="F:\graduate OSU\graduate study\leetcode\DFS" />
       <recent name="F:\graduate OSU\graduate study\leetcode\Array\Maximum_Subarray" />
       <recent name="F:\graduate OSU\graduate study\leetcode\Binary_Search" />
-      <recent name="F:\graduate OSU\graduate study\leetcode" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\graduate OSU\graduate study\leetcode\#Test_Basic" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -196,6 +196,10 @@
       <workItem from="1568509972562" duration="1300000" />
       <workItem from="1568866630862" duration="713000" />
       <workItem from="1568867469211" duration="330000" />
+      <workItem from="1568870144560" duration="2400000" />
+      <workItem from="1569219733568" duration="363000" />
+      <workItem from="1569300765099" duration="2556000" />
+      <workItem from="1569623259854" duration="3466000" />
     </task>
     <task id="LOCAL-00001" summary="firstTry">
       <created>1568867552964</created>
@@ -218,7 +222,105 @@
       <option name="project" value="LOCAL" />
       <updated>1568867722482</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="09/22/2019">
+      <created>1569125649925</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569125649925</updated>
+    </task>
+    <task id="LOCAL-00005" summary="09/22/2019">
+      <created>1569125894900</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569125894900</updated>
+    </task>
+    <task id="LOCAL-00006" summary="09/22/2019">
+      <created>1569125924053</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1569125924053</updated>
+    </task>
+    <task id="LOCAL-00007" summary="09/23/2019">
+      <created>1569219905726</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569219905726</updated>
+    </task>
+    <task id="LOCAL-00008" summary="09/24/2019">
+      <created>1569302196054</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569302196054</updated>
+    </task>
+    <task id="LOCAL-00009" summary="09/25/2019">
+      <created>1569385237971</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1569385237971</updated>
+    </task>
+    <task id="LOCAL-00010" summary="09/25/2019">
+      <created>1569385343993</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1569385343993</updated>
+    </task>
+    <task id="LOCAL-00011" summary="10/04/2019">
+      <created>1570245128743</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1570245128743</updated>
+    </task>
+    <task id="LOCAL-00012" summary="10/04/2019">
+      <created>1570245274386</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1570245274386</updated>
+    </task>
+    <task id="LOCAL-00013" summary="10/04/2019">
+      <created>1570245345501</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1570245345501</updated>
+    </task>
+    <task id="LOCAL-00014" summary="10/04/2019">
+      <created>1570245461191</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570245461191</updated>
+    </task>
+    <task id="LOCAL-00015" summary="10/04/2019">
+      <created>1570245672715</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1570245672715</updated>
+    </task>
+    <task id="LOCAL-00016" summary="10/04/2019">
+      <created>1570249878608</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1570249878608</updated>
+    </task>
+    <task id="LOCAL-00017" summary="10/04/2019">
+      <created>1570250100147</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1570250100147</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +342,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="firstTry" />
     <MESSAGE value="09/19/2019" />
-    <option name="LAST_COMMIT_MESSAGE" value="09/19/2019" />
+    <MESSAGE value="09/22/2019" />
+    <MESSAGE value="09/23/2019" />
+    <MESSAGE value="09/24/2019" />
+    <MESSAGE value="09/25/2019" />
+    <MESSAGE value="10/04/2019" />
+    <option name="LAST_COMMIT_MESSAGE" value="10/04/2019" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -277,5 +384,8 @@
         <watch expression="src" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Leetcode$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1569623276620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/#Test_Basic" />
   </component>
 </project>
