@@ -30,7 +30,8 @@ Note:
 -10000 < points[i][1] < 10000
 """
 
-class Solution(object):
+
+class SolutionSort(object):  # O(nlogn)
     def kClosest(self, points, K):
         """
         :type points: List[List[int]]
@@ -39,3 +40,15 @@ class Solution(object):
         """
         points.sort(key = lambda x: x[0]**2 + x[1]**2)
         return points[:K]
+
+import heapq
+
+
+class Solution(object):  # O(nlogK)
+    def kClosest(self, points, K):
+        """
+        :type points: List[List[int]]
+        :type K: int
+        :rtype: List[List[int]]
+        """
+        return heapq.nsmallest(K, points, lambda x, y: x * x + y * y)
