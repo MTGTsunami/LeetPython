@@ -8,5 +8,5 @@ class UF:
         return self.p[x]
 
     def union(self, x, y):
-        self.p[self.find(x)] = self.p[y]
+        self.p[self.find(x)] = self.p[self.find(y)]
 
