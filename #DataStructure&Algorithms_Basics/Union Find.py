@@ -9,4 +9,3 @@ class UF:
 
     def union(self, x, y):
         self.p[self.find(x)] = self.p[self.find(y)]
-
