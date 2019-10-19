@@ -39,7 +39,7 @@ class UF:
         self.p[self.find(x)] = self.find(y)
 
 
-class Solution(object):
+class MySolution(object):
     def findCircleNum(self, M):
         """
         :type M: List[List[int]]
