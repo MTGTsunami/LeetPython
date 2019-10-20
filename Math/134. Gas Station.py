@@ -61,6 +61,7 @@ class Solution(object):
                 current = 0
         return startPos if total >= 0 else -1
 
+
 """
 proof: 如果total>=0则必有一解。假设从start point开始回到0之后不能再从0到start point，则start point到0之间的加油站Ns
 都不能使得该车从Ns到0后再从0回到Ns。假设从start point开始回到0，从0开始后到第k个加油站燃料不足。对于从Ns开始到0再从0到k，
