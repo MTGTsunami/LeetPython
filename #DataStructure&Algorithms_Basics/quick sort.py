@@ -17,6 +17,7 @@ def getIndex(l, low, high):
 
     return index
 
+
 def quickSort(l, low, high):
     if low < high:
         index = getIndex(l, low, high)
