@@ -44,7 +44,7 @@ class SolutionSort(object):  # O(nlogn)
 import heapq
 
 
-class Solution(object):  # O(nlogK)
+class Solution(object):  # O(nlogK) heap
     def kClosest(self, points, K):
         """
         :type points: List[List[int]]
@@ -52,3 +52,35 @@ class Solution(object):  # O(nlogK)
         :rtype: List[List[int]]
         """
         return heapq.nsmallest(K, points, lambda x, y: x * x + y * y)
+
+
+class MySolution:  # O(n) quick select
+    def kClosest(self, points: List[List[int]], K: int) -> List[List[int]]:
+        dist = lambda x: points[x][0] ** 2 + points[x][1] ** 2
+
+        def partition(points, low, high):
+            pivot = dist(low)
+            pivotPoint = points[low]
+
+            while low < high:
+                while low < high and dist(high) >= pivot:
+                    high -= 1
+                points[low] = points[high]
+
+                while low < high and dist(low) <= pivot:
+                    low += 1
+                points[high] = points[low]
+
+            points[low] = pivotPoint
+            return low
+
+        def quickselect(points, low, high, K):
+            if low <= high:
+                idx = partition(points, low, high)
+                if idx < K - 1:
+                    quickselect(points, idx + 1, high, K)
+                elif idx > K - 1:
+                    quickselect(points, low, idx - 1, K)
+
+        quickselect(points, 0, len(points) - 1, K)
+        return points[:K]
