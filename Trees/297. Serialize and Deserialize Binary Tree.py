@@ -27,6 +27,13 @@ Note: Do not use class member/global/static variables to store states. Your seri
 #         self.left = None
 #         self.right = None
 
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
 class Codec:
 
     def serialize(self, root):
@@ -37,7 +44,7 @@ class Codec:
         """
 
         def serializeString(root, string):
-            if root is None:
+            if not root:
                 string += "None,"
             else:
                 string += str(root.val) + ','
@@ -55,16 +62,17 @@ class Codec:
         """
 
         def deserializeList(l):
-            if l[0] == 'None':
-                l.pop(0)
+            if l[-1] == 'None':
+                l.pop()
                 return None
 
-            root = TreeNode(l.pop(0))
+            root = TreeNode(l.pop())
             root.left = deserializeList(l)
             root.right = deserializeList(l)
             return root
 
-        l = data.split(',')
+        l = data.split(',')[:-1]
+        l.reverse()
         root = deserializeList(l)
         return root
 
