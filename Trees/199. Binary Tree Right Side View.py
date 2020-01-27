@@ -42,3 +42,4 @@ class MySolution:
             prev = (node, val)
         res.append(node.val)
         return res
+
