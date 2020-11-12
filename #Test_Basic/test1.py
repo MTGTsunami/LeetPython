@@ -1,1 +1,1 @@
-change = "make some change on master"
+change = "make some change on master!"
