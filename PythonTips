@@ -1,0 +1,117 @@
+Old tips: sort out on 02/20/2020	     1
+				       		            / \
+1. a = None 对应boolean a = False       2   3
+2. height of tree = 1
+3. c = collections.Counter()为hash-table的对象计数，里面可以是string也可以是list，是字典的子类
+4. 递归时相同名称的变量也是会每次重新申请堆栈
+5. dict.values()将dict的所有value转换为一个list中输出(python2)，python3中dict.values()返回值是一个dict.values的object。itervalues和其相同但在python3中被移除
+6. 树 后序：左->右->根
+7. list.insert(i, x), i, x分别表示位置和内容。若指定位置不存在则添加到末尾
+8. list.sort(cmp, key, reverse) cmp为可选参数，用该参数方法排序； key是用来进行比较的元素，只有一个参数
+9. lambda 匿名函数定义，函数速写 ex: list(filter(lambda x: True if x % 3 == 0 else False, range(100))), 该为筛选100以内3的倍数，生成一个列表。
+10. del list[i] 把下标为i的元素删除，time complexity O(n)
+11. list的组合: [1, 2, 3] + [4, 5] = [1, 2, 3, 4, 5]
+12. list.count(obj) 统计某个元素在列表中出现的次数 time O(n)
+13. list.index(obj) 从列表中找出某个值第一个匹配项的索引位置 time O(n)
+13. dict.clear() 清空所有条目, python3中删除dict.iteritems(), 目前dict.items()返回dict_items object
+14. OrderedDict: from collections import OrderedDict
+    [1] OrderedDict.move_to_end('k') 指定一个key，把对应的k-v已移动到最后
+    [2] OrderedDict[key] = value 创建在字典末尾
+    [3] OrderedDict.popitem(last=True/False) T->删除最后一对k-v并返回 F->删除第一对
+15. Python函数可以直接return，不返回任何值 ex: if ~, return. 返回为空时默认其布尔值为False
+16. Shallow copy vs deep copy: https://stackoverflow.com/questions/2612802/list-changes-unexpectedly-after-assignment-why-is-this-and-how-to-prevent-it list的deepcopy不仅copy list本身（list的内存地址id改变）， 还copy list中的每一个object。shallow copy只copy list本身（数据结构）
+17. 判断一个元素的数据类型: type(obj) ex: if type(a) is int: ~, type不会认为子类是一种父类类型。 或者用isinstance来判断：isinstance(a, int) -> 返回bool
+18. python位运算
+    [1] a^b 把a，b化为二进制按位对比，相同时值为0，不同时为1。找出一个数组中唯一一个没有相同配对的数： x = num[0]; for i in num[1:]: x ^= i; return x。 来个那个相同的数取^为0，0对任何元素取^为该元素。 a^(b^c) = (a^b)^c
+    [2] a&b 按位与 3&5 -> 011&101 -> 011 = 1
+    [3] a|b 按位并
+    [4] ~ 按位翻转 ~3 -> -(11+1) -> -100B -> -4D
+    [5] << 左移 3<<2 -> 11向左移动两位 -> 1100 -> 12
+19. list.pop()或del[]里面的参数均为数组下标
+20. heapq模块（实现的是最小堆）: import heapq list = [1, 2, 3, 5, 1, 5, 8, 9, 6]
+    [1] heapq.heappush(h, 2) -> h:[2]
+    [2] heapq.heapify(list) -> list:[1, 1, 3, 5, 2, 5, 8, 9, 6]
+    [3] heapq.heappop(list) -> 取出最小值并删除该数据
+    [4] heapq.merge(heap1, heap2) -> 将多个堆合并
+    [5] heapq.nlargest/nsmallest(n(前n个), heap) -> 最大/最小的元素，返回列表
+    [6] heapq.heappushpop(heap, item) -> 先push进去item再pop出来
+21. heapq自带最大堆:
+    [1] heapq._heapify_max(x)
+    [2] heapq._heappop_max(heap)
+    [3] heapq._heappush_max 不存在
+22. collections 模块下的defaultdict，对不存在的的k-v pair设下默认value -> dd = collections.defaultdict(list) -> 调用工厂函数，弥补缺失的值: defaultdict(lambda: defaultdict(list))
+23. sorted(obj, key, reverse) 返回新的list
+24. ord(char) -> 返回对应十进制整数: ord('a') = 97
+25. python中数字变量int, bool, float, complex（复数）
+26. 转义符'\'，使用r可以让其不发生转义
+27. Python可在同一行使用多条语句，语句之间用';'分割 ex: import sys; x = "good"; print(x)
+28. print默认输出是换行的，若实现不换行: print(output, end="")
+29. 树的前序遍历: iterative
+	def preorder_traversal(root):
+		if not root:
+			return []
+		stack, output = [root], []
+		while stack:
+			root = stack.pop()
+			output.append(root.val)
+			if root.right:
+				stack.append(root.right)
+			if root.left:
+				stack.append(root.left)
+		return output
+30. 树的中序遍历: iterative
+	def inorder_traversal(root):
+		stack, l = [], []
+		while stack or root:
+			while root:
+				stack.append(root)
+				root = root.left
+			root = stack.pop()
+			l.append(root.val)
+			root = root.right
+		return l
+31. 树的后序遍历: 右左顺序颠倒，output反序输出: 根右左->左右根
+32. string方法:
+    [1] s.count(str, beg=0, end=len(string))返回str在string中出现的次数
+    [2] s.replace(old, new, [,max]) 把string中的str1替换成str2。若果max指定，则替换不超过max次，不然全部替换。 -> 该方法用于delete string中的字符, 要保存删除后值需要重新保存 s = s.replace()
+    [3] s.strip([chars]) 用于移除字符串投喂的指定字符（默认为空格或者换行符）
+    [4] s.split(str="", num=string.count(str)) str: 分割符，默认为所有的空字符，包括空格、换行（\n）、制表符(\t)等；num:分割次数，默认为所有
+    [5] s.lower()/s.upper() 返回s的全部小写/大写格式
+    [6] s.title() 返回s开头字母大写（其余不变）; s.capitalize() 返回开头大写，其余小写; s.swapcase() 返回大小写完全相反
+    [7] s.find(str, beg=0, end=len(string)) 检查是否在指定范围内，如果包含则返回str开始的下标值，不包含返回-1.（只进行一次搜索，返回一个下标）
+33. import deque 双端队列
+    [1] d.clear() 清除所有
+    [2] d.extend()/d.extendleft() 同list的extend
+34. from math import floor, ceil -> ceil(5/3) = 2, floor(5/3) = 1
+35. if cond1 and cond2 ... 若cond1为假则不会执行cond2以及以后的条件
+36. 初始化一个三角形的数组[[1], [1, 1], [1, 1, 1], ...] -> [[1 for j in range(1, i + 2)] for i in range(n)]
+37. bin(x) -> 返回一个int/long int 的二进制表示
+38. from queue import Queue: queue = Queue(); queue.put() -> queue.get()
+39. filter(function, iterable) iterable序列: 每个元素作为参数传递给函数进行判定，返回True/False，最后将返回True的元素放到新的列表中
+40. Python赋值 a = b = c = 1 等价于 a = 1, b = a, c = a。python的变量不直接存储值，而是引用一个内存地址。交换变量时，只是交换了引用的地址
+41. id()函数，用于获取对象的内存地址
+42. 在函数内定义的函数里若要用到外函数定义的变量（global variable），则需在内函数内对该变量添加nonlocal修饰
+43. string去掉标点符号: import string; s = s.translate(str.maketrans('', '', string.punctuation))
+44. map会根据提供的函数对指定序列做映射 map(function, iterable...) ex: def square(x): return x ** 2; map(square([1, 2, 3])) -> [1, 4, 9]
+45. import random
+    [1] random.random(无参数) 产生0到1之间的随机浮点数
+    [2] random.randint(1, 10) 产生1到10的一个整数型随机数（包括1和10）
+    [3] random.uniform(1.1, 5.4) 产生一个1.1到5.4之间的随机浮点数，区间可以不是整数
+    [4] random.choice("tomorrow") 从序列中随机选取一个元素
+    [5] random.randrange(1, 100, 2) 生成从1到100间隔为2的随机整数
+46. 将l切片的一部分赋回给l: l[:] = l[m:n]
+47. 精确小数点 import decimal; Decimal("1.001") = 1.001, type:decimal.Decimal
+48. 合并两个集合a = set([1]), b = set([2, 3]); a = a.union(b) -> a = set([1, 2, 3])
+49. python中的while循环比for循环慢，python3中取消xrange，range返回迭代器
+50. list += 3, 等价于 list.append(3)
+51. 排序/最小堆时对于数字要求从大到小排列，可以将数字取相反数入堆，出堆再取回来
+52. import bisect 二分插入包 bisect.bisect_left()...
+53. Python3 iter()迭代器
+    [1] 判断一个对象是否可以迭代: from collections import Iterable; isinstance(obj, Iterable)
+    [2] 定义一个可迭代对象: 在class中加入 def __iter__(self): 方法
+    [3] iter(obj[, sentinel]), 调用next()查看下一个
+54. itertools 是很强大的包 import itertools
+    [1] itertools.product(*iterable, repeat=1) -> 可迭代对象输入的笛卡尔积 等价于 ((x, y) for x in A for y in B)  ex: l1 = ['a', 'b'], l2 = ['c', 'd']; for i in itertools.product(*(l1, l2)): print(i) -> ('a', 'c'), ('b', 'c'), ('a', 'd'), ('b', 'd') * -> 将元组拆开得到笛卡尔积
+55. zip()用于将可迭代的对象作为参数，将对象中的对应元素打包成一个元组，然后返回由这些元组组成的列表。如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同。ex: a = [1, 2, 3], c = [4，5，6，7，8]; zip(a, c) = [(1, 4), (2, 5), (3, 6)]
+56. * -> 解包。a, b, *c = [1, 2, 3, 4] -> a = 1, b = 2, c = [3, 4]
+57. Python profiler 生成文件的阅读方式：https://stackoverflow.com/questions/8283112/cprofile-saving-data-to-file-causes-jumbles-of-characters
